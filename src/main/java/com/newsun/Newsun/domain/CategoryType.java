@@ -16,7 +16,7 @@ public class CategoryType {
     @Column(name = "category_type_id")
     private Long id;
 
-    @Column(name = "category_type_content")
+    @Column(name = "contents")
     private String contents;
 
     @Builder

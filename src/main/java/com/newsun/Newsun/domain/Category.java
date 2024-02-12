@@ -20,7 +20,7 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private List<CategoryType> categoryTypes = new ArrayList<>();
 

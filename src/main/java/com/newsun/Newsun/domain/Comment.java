@@ -20,16 +20,17 @@ public class Comment {
     @Column(name = "comment_id")
     private Long id;
 
-    @Column(name = "commment_contents", length = 511, nullable = false)
+    @Column(name = "contents", length = 511, nullable = false)
     private String contents;
 
-    @Column(name = "comment_created_at", nullable = false)
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "comment_update_at")
+    @Column(name = "update_at")
     private LocalDateTime updatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member")
     private Member member;
 
     @Builder

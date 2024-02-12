@@ -20,14 +20,15 @@ public class PostLike {
     @Column(name = "post_like_id")
     private Long id;
 
-    @Column(name = "post_like_created_at")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_like_id")
+    @JoinColumn(name = "member_id")
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
     private Post post;
 
     @Builder
