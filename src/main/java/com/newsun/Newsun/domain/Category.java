@@ -25,7 +25,7 @@ public class Category {
     private List<CategoryType> categoryTypes = new ArrayList<>();
 
     @Builder
-    public Category(List<CategoryType> categoryTypes) {
+    public Category(final List<CategoryType> categoryTypes) {
         this.categoryTypes = categoryTypes;
     }
 }
