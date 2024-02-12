@@ -19,16 +19,16 @@ public class Post {
     @Column(name = "post_id")
     private Long id;
 
-    @Column(name = "post_title", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "post_contents", length = 1023, nullable = false)
+    @Column(name = "contents", length = 1023, nullable = false)
     private String contents;
 
-    @Column(name = "categoryTypeName", nullable = false)
+    @Column(name = "category_type_name", nullable = false)
     private String categoryTypeName;
 
-    @Column(name = "category_created_at", nullable = false)
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @Builder

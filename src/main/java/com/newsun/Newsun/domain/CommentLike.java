@@ -20,15 +20,15 @@ public class CommentLike {
     @Column(name = "category_like_id")
     private Long id;
 
-    @Column(name = "comment_like_created_at")
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "comment_like_member")
+    @JoinColumn(name = "member")
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "comment_like_comment")
+    @JoinColumn(name = "comment")
     private Comment comment;
 
     @Builder
