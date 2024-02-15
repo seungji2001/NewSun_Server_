@@ -20,7 +20,7 @@ public class PostLike {
     @Column(name = "post_like_id")
     private Long id;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
