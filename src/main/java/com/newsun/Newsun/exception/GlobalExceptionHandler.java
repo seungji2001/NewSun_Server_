@@ -16,7 +16,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
     @ExceptionHandler(value = {HttpMessageNotReadableException.class})
     public ResponseDto<?> handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         log.error(
