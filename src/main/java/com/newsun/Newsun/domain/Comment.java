@@ -30,7 +30,7 @@ public class Comment {
     private LocalDateTime updatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,5 +47,4 @@ public class Comment {
         this.member = member;
         this.post = post;
     }
-
 }

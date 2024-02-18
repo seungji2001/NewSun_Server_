@@ -24,11 +24,11 @@ public class CommentLike {
     private LocalDateTime createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "comment")
+    @JoinColumn(name = "comment", nullable = false)
     private Comment comment;
 
     @Builder

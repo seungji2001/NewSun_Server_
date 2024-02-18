@@ -20,7 +20,7 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<CategoryType> categoryTypes = new ArrayList<>();
 
     @Builder
