@@ -47,6 +47,9 @@ public class Member {
     private List<PostLike> postLikes = new ArrayList<>();
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Comment> comments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<CommentLike> commentLikes = new ArrayList<>();
 
     @Builder
