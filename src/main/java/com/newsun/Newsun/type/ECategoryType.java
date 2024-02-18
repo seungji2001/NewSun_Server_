@@ -1,8 +1,12 @@
 package com.newsun.Newsun.type;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+import java.util.Arrays;
 
 @Getter
+@RequiredArgsConstructor
 public enum ECategoryType {
 
     POLITICS_CATEGORY("politics"),
@@ -14,8 +18,11 @@ public enum ECategoryType {
 
     ;
     private final String value;
-    ECategoryType(String value) {
-        this.value = value;
-    }
 
+    public static ECategoryType fromValue(String value) {
+        return Arrays.stream(ECategoryType.values()).
+                filter(eCategoryType -> eCategoryType.getValue().equals(value))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("No such name in ECategoryType : " + value));
+    }
 }
