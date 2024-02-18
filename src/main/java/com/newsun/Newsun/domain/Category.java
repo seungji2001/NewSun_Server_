@@ -20,8 +20,7 @@ public class Category {
     @Column(name = "category_id")
     private Long id;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @OneToMany(mappedBy = "category")
     private List<CategoryType> categoryTypes = new ArrayList<>();
 
     @Builder
