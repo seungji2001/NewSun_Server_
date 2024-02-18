@@ -23,6 +23,7 @@ public enum ErrorCode {
 
     // 404 not Found Error
     NOT_FOUND_END_POINT(40400, HttpStatus.NOT_FOUND, "존재하지 않는 End Point"),
+    NOT_FOUND_MEMBER(40401, HttpStatus.NOT_FOUND, "존재하지 않는 사용자"),
 
 
     // 405 Method Not Allowed
