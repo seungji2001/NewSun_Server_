@@ -1,5 +1,6 @@
 package com.newsun.Newsun.domain;
 
+import com.newsun.Newsun.type.ELoginProvider;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -25,10 +26,11 @@ public class Member {
     private String password;
 
     @Column(name = "social_id", unique = true)
-    private Long socialId;
+    private String socialId;
 
-    @Column(name = "provider", nullable = false)
-    private String provider;
+    @Column(name = "provider")
+    @Enumerated(EnumType.STRING)
+    private ELoginProvider provider;
 
     @Column(name = "is_login", columnDefinition = "TINYINT(1)", nullable = false)
     private Boolean isLogin;
@@ -53,9 +55,9 @@ public class Member {
     private List<CommentLike> commentLikes = new ArrayList<>();
 
     @Builder
-    public Member(final Long socialId,
+    public Member(final String socialId,
                   final String password,
-                  final String provider,
+                  final ELoginProvider provider,
                   final Category category
     ) {
         this.socialId = socialId;

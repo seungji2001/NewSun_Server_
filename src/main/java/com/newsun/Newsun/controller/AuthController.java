@@ -28,4 +28,10 @@ public class AuthController {
         map.put("url", oAuth2Service.getRedirectUrl(ELoginProvider.GOOGLE));
         return ResponseDto.ok(map);
     }
+
+    @GetMapping("/google/callback")
+    public void getGoogleAccessToken(String code, HttpServletResponse response) throws IOException {
+        String accessToken = oAuth2Service.getAccessToken(code, ELoginProvider.GOOGLE);
+        oAuth2Service.login(response, accessToken, ELoginProvider.GOOGLE);
+    }
 }
