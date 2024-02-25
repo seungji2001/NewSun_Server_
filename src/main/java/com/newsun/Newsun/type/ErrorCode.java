@@ -14,6 +14,7 @@ public enum ErrorCode {
     MISSING_REQUEST_PARAMETER(40000, HttpStatus.BAD_REQUEST, "요청 파라미터 불일치 에러"),
     MISMATCH_PARAMETER_TYPE(40001, HttpStatus.BAD_REQUEST, "요청 파라미터 타입 에러"),
     BAD_REQUEST_BINDING_JSON(40002, HttpStatus.BAD_REQUEST, "요청한 JSON 바인딩 실패"),
+    INVALID_CATEGORY_ENUM(40003, HttpStatus.BAD_REQUEST, "유효하지 않는 카테고리"),
 
     // 401 Unauthorized Error
 
