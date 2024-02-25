@@ -39,9 +39,8 @@ public class Member {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "category_id", referencedColumnName = "category_id", nullable = false)
-    private Category category;
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<Category> categoryList;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<PostLike> postLikes = new ArrayList<>();

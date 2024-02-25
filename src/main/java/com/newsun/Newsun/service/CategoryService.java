@@ -32,8 +32,8 @@ public class CategoryService {
         Member member = memberRepository.findById(1L)
                 .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_MEMBER));
 
-        Category category = member.getCategory();
-        List<CategoryDto> categoryDtos= category.getCategoryTypes().stream()
+        List<Category> categoryList = member.getCategoryList();
+        List<CategoryDto> categoryDtos = categoryList.stream()
                 .map(categoryType -> CategoryDto.of(
                         categoryType.getId(),
                         categoryType.getCategoryTypeContents()
