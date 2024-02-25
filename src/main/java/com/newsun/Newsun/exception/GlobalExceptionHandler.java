@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(value = {MissingServletRequestParameterException.class})
-    public ResponseDto<?> handleMissingServletRequestParameterException( MissingServletRequestParameterException e ) {
+    public ResponseDto<?> handleMissingServletRequestParameterException(MissingServletRequestParameterException e ) {
         log.error(
                 "handleMissingServletRequestParameterException() in GlobalExceptionHandler throw Exception : {}",
                 e.getMessage()
