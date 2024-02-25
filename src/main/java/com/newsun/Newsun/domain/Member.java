@@ -54,8 +54,7 @@ public class Member {
     @Builder
     public Member(final Long socialId,
                   final String password,
-                  final String provider,
-                  final Category category
+                  final String provider
     ) {
         this.socialId = socialId;
         this.password = password;
@@ -63,6 +62,5 @@ public class Member {
         this.isLogin = false;
         this.refreshToken = null;
         this.createdAt = LocalDateTime.now();
-        this.category = category;
     }
 }
