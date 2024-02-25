@@ -57,7 +57,6 @@ public class CategoryService {
         if (!memberCategoryList.isEmpty()) {
             categoryRepository.deleteAllInBatch(memberCategoryList);
             log.info(memberCategoryList.toString());
-//            memberCategoryList.clear();
         }
 
         log.info(createCategoryListDto.toString());
