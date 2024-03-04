@@ -10,12 +10,12 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public enum ECategoryType {
 
-    POLITICS_CATEGORY("politics"),
-    ECONOMY_CATEGORY("economy"),
-    LIFE_CATEGORY("life"),
-    SCIENCE_CATEGORY("science"),
-    ENTERTAIN_CATEGORY("entertain"),
-    SPORTS_CATEGORY("sports")
+    POLITICS("POLITICS"),
+    ECONOMY("ECONOMY"),
+    LIFE("LIFE"),
+    SCIENCE("SCIENCE"),
+    ENTERTAIN("ENTERTAIN"),
+    SPORTS("SPORTS")
     ;
 
     private final String value;
