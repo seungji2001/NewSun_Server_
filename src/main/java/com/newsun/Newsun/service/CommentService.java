@@ -15,8 +15,10 @@ import com.newsun.Newsun.type.ErrorCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -72,5 +74,30 @@ public class CommentService {
         commentRepository.save(comment);
 
         return Boolean.TRUE;
+    }
+
+
+    @Transactional
+    public CommentDto patchComment(Long commentId, CreateCommentDto pathCommentDto) {
+        /*
+         * 현재 member 확인 TEST 코드
+         * 추후 수정 예정
+         */
+        Member member = memberRepository.findById(2L)
+                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_MEMBER));
+
+        Comment comment = commentRepository.findByIdAndMember(commentId, member)
+                .orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_COMMENT));
+
+        comment.update(pathCommentDto.contents());
+        return CommentDto.of(
+                comment.getId(),
+                comment.getMember().getId(),
+                comment.getContents(),
+                comment.getCreatedAt().toString(),
+                comment.getUpdatedAt().toString(),
+                commentLikeRepository.countByComment(comment),
+                commentLikeRepository.existsByMember(member)
+        );
     }
 }
