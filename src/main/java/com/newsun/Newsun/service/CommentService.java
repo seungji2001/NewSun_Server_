@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -99,5 +98,13 @@ public class CommentService {
                 commentLikeRepository.countByComment(comment),
                 commentLikeRepository.existsByMember(member)
         );
+    }
+
+    @Transactional
+    public Boolean deleteComment(Long commentId) {
+        Comment comment = commentRepository.findById(commentId).orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUND_COMMENT));
+        commentRepository.delete(comment);
+
+        return Boolean.TRUE;
     }
 }

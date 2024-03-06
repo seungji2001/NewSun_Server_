@@ -35,9 +35,9 @@ public class CommentController {
     ) {
         return ResponseDto.ok(commentService.patchComment(commentId, patchCommentDto));
     }
-//
-//    @GetMapping("/post/{postId}/comment")
-//    public ResponseDto<CommentListDto> listComment(@PathVariable Long postId) {
-//        return ResponseDto.ok(commentService.listComment(postId));
-//    }
+
+    @DeleteMapping("/comment/{commentId}")
+    public ResponseDto<Boolean> deleteComment(@PathVariable Long commentId) {
+        return ResponseDto.ok(commentService.deleteComment(commentId));
+    }
 }
