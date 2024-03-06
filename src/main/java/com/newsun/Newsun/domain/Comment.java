@@ -47,4 +47,9 @@ public class Comment {
         this.member = member;
         this.post = post;
     }
+
+    public void update(String contents) {
+        this.contents = contents;
+        this.updatedAt = LocalDateTime.now();
+    }
 }
