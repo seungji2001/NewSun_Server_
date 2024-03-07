@@ -38,6 +38,9 @@ public class OAuth2Service {
         if (provider == ELoginProvider.GOOGLE) {
             accessToken = oAuth2Util.getGoogleAccessToken(authorizationCode);
         }
+        if (provider == ELoginProvider.KAKAO) {
+            accessToken = oAuth2Util.getKakaoAccessToken(authorizationCode);
+        }
         return accessToken;
     }
 
@@ -45,6 +48,8 @@ public class OAuth2Service {
         String tempId = null;
         if (provider == ELoginProvider.GOOGLE) {
             tempId = oAuth2Util.getGoogleUserInfo(accessToken);
+        } else if (provider == ELoginProvider.KAKAO) {
+            tempId=oAuth2Util.getKakaoUserInfo(accessToken);
         }
 
         if (tempId == null) {
