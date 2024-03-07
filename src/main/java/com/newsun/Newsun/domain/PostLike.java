@@ -35,6 +35,7 @@ public class PostLike {
     public PostLike(final Member member,
                     final Post post
     ) {
+        this.createdAt = LocalDateTime.now();
         this.member = member;
         this.post = post;
     }
