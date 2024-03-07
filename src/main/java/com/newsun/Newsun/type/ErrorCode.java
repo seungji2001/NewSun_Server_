@@ -28,6 +28,7 @@ public enum ErrorCode {
     NOT_FOUND_MEMBER(40401, HttpStatus.NOT_FOUND, "존재하지 않는 사용자"),
     NOT_FOUND_POST(40402, HttpStatus.NOT_FOUND, "존재하지 않는 기사"),
     NOT_FOUND_COMMENT(40403, HttpStatus.NOT_FOUND, "존재하지 않는 댓글"),
+    NOT_FOUND_COMMENTLIKE(40404, HttpStatus.NOT_FOUND, "존재하지 않는 댓글 좋아요"),
 
 
     // 405 Method Not Allowed
