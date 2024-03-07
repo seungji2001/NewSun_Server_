@@ -16,6 +16,8 @@ import java.util.Objects;
 @Component
 @RequiredArgsConstructor
 public class OAuth2Util {
+
+    //google
     @Value("${security.oauth2.google.authentication_url}")
     private String GOOGLE_AUTHENTICATION_URL;
     @Value("${security.oauth2.google.token_url}")
@@ -29,7 +31,23 @@ public class OAuth2Util {
     @Value("${security.oauth2.google.redirect_uri}")
     private String GOOGLE_REDIRECT_URI;
 
+    //kakao
+    @Value("${security.oauth2.kakao.authentication_url}")
+    private String KAKAO_AUTHENTICATION_URL;
+    @Value("${security.oauth2.kakao.rest_api_key}")
+    private String KAKAO_REST_API_KEY;
+    @Value("${security.oauth2.kakao.redirect_uri}")
+    private String KAKAO_REDIRECT_URI;
+
+
     private final RestTemplate restTemplate = new RestTemplate();
+
+    public String getKakaoRedirectUrl() {
+        return KAKAO_AUTHENTICATION_URL
+                + "?client_id=" + KAKAO_REST_API_KEY
+                + "&redirect_uri=" + KAKAO_REDIRECT_URI
+                + "&response_type=code";
+    }
 
     public String getGoogleRedirectUrl() {
         return GOOGLE_AUTHENTICATION_URL

@@ -27,6 +27,9 @@ public class OAuth2Service {
         if (provider == ELoginProvider.GOOGLE) {
             return oAuth2Util.getGoogleRedirectUrl();
         }
+        if(provider == ELoginProvider.KAKAO){
+            return oAuth2Util.getKakaoRedirectUrl();
+        }
         return null;
     }
 
