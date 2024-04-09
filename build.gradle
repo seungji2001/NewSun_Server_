@@ -47,6 +47,9 @@ dependencies {
 
 	// Google
 	implementation 'com.google.code.gson:gson'
+
+	//crawling
+	implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.15.0'
 }
 
 tasks.named('test') {
