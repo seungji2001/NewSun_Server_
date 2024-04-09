@@ -24,7 +24,7 @@ public class Post {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "contents", length = 1023, nullable = false)
+    @Column(name = "contents",columnDefinition = "TEXT", nullable = false)
     private String contents;
 
     @Column(name = "category_type_name", nullable = false)
